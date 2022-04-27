@@ -14,7 +14,17 @@
 .mainContent_aside{
 
   display: grid;
-  grid-template-columns: 0.8fr 4fr;
+  transition-duration: .3s;
+  transition: .3s all linear;
+  &_active{
+    grid-template-columns: 0.8fr 4fr;
+    transition: .3s all linear;
+  }
+  &_unactive{
+    transition: .3s all linear;
+    grid-template-columns: 0.25fr 4fr;
+
+  }
 }
 .mainContent{
   display: block;

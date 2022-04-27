@@ -47,6 +47,9 @@
     }
 
   }
+  &_error{
+    display: none;
+  }
 }
 .login{
   width: 100%;
@@ -62,6 +65,7 @@
   &_input{
     display: block;
     height: 30px;
+    width: 100%;
     border: none;
     z-index: 100;
     background-color: rgba(255, 255, 255, 0);
@@ -101,5 +105,12 @@
 
   &_dirty{
     @include active
+  }
+  &_error{
+    color: #d93025;
+    position: absolute;
+    @include noselect;
+    font-size: 12px;
+    bottom: 10px;
   }
 }

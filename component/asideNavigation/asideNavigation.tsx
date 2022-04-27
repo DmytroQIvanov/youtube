@@ -42,9 +42,13 @@ type linkType = {
   text: string;
   link: string;
   authorization: boolean;
+  aside?: boolean;
 };
 
-const LinksComponent: React.FC<{ links: linkType[] }> = ({ links }) => {
+const LinksComponent: React.FC<{ links: linkType[]; aside?: boolean }> = ({
+  links,
+  aside,
+}) => {
   return (
     <div className={styles.asideNavigation__linksContainer}>
       {links.map((elem, index) => (
@@ -54,6 +58,7 @@ const LinksComponent: React.FC<{ links: linkType[] }> = ({ links }) => {
           text={elem.text}
           link={elem.link}
           authorization={elem.authorization}
+          aside={aside}
         />
       ))}
     </div>
@@ -65,6 +70,7 @@ const LinkComponent: React.FC<linkType> = ({
   text,
   image,
   authorization,
+  aside,
 }) => {
   const { pathname } = useRouter();
   // if (authorization) return <></>;
@@ -77,16 +83,17 @@ const LinkComponent: React.FC<linkType> = ({
       <div className={styles.asideNavigation__linkImg}>
         <Image src={image} />
       </div>
-      <Link href={link}>{text}</Link>
+      {aside&&
+      <Link href={link}>{text}</Link>}
     </div>
   );
 };
 
-const AsideNavigation = () => {
+const AsideNavigation: React.FC<{ active?: boolean }> = ({ active=true }) => {
   return (
     <div className={styles.asideNavigation}>
-      <LinksComponent links={firstLinks} />
-      <LinksComponent links={secondLinks} />
+      <LinksComponent links={firstLinks} aside={active}/>
+      <LinksComponent links={secondLinks} aside={active}/>
     </div>
   );
 };

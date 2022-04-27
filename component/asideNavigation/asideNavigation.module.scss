@@ -16,6 +16,12 @@
     color: #898989;
     margin-top: 14px;
     transition-duration: .3s;
+    a{
+      transition-duration: .3s;
+    }
+    a:hover{
+      color: #ff3e3e;
+    }
     &_active{
       color: #FF0000;
     }

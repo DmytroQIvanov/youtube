@@ -1,11 +1,11 @@
 import React from 'react';
 import WrapperComponent from "../component/WrapperComponent/WrapperComponent";
+import SideBar from "../component/SideBar/SideBar";
 
 const Login = () => {
     return (
-        <WrapperComponent title={'login'} >
+        <WrapperComponent title={'login'} header>
         <div>
-            ssssss
 
         </div>
         </WrapperComponent>

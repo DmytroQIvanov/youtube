@@ -1,0 +1,40 @@
+.sidebar{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  transition: all .3s linear;
+  height: 100vh;
+
+  &_active{
+    background-color: white;
+    left: 0px;
+    z-index: 100000;
+    &_content{
+      background-color: #30384C;
+    }}
+  &_unactive{
+    left: -290px;
+    z-index: -10;
+  }
+  &_modal{
+    transition: .3s all linear;
+    z-index: 10;
+    transition-duration: .3s;
+    top:0px;
+    left:0px;
+    &_active{
+      background-color: rgba(75, 75, 75, 0.55);
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+    }
+    &_unactive{
+      background-color: rgba(75, 75, 75, 0);
+      position: fixed;
+      width: 100vw;
+      opacity: 0;
+      visibility: hidden;
+      height: 100vh;
+    }
+  }
+}

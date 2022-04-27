@@ -6,47 +6,52 @@ import find from "/public/search.svg";
 interface inputProps {
   placeholder?: string;
   classname?: string;
-  type?: "header" | "login";
+  InputType?: "header" | "login";
+  type?:'password' | 'email';
   text?: string;
   img?: boolean;
   onChange?:(text:string)=>{};
+  error?: string;
 }
 
 const Input: React.FC<inputProps> = ({
   placeholder,
   classname,
-  type = "header",
+  InputType = "header",
+
   text,
   img,
     onChange,
+    error,
+    type
 }) => {
 
   const [inputState,setInputState] =useState('');
   const [dirty,setDirty] =useState(false);
   useEffect(()=>{
-    if(inputState.length>0){
+    setDirty(false)
+    if(inputState.length>0)
       setDirty(true)
-    }else{
-      setDirty(false)
-    }
   },[inputState])
 
   const handleChange=(event:ChangeEvent<HTMLInputElement>)=>{
-
     setInputState(event.target.value);
     onChange&&onChange(inputState);
   }
   return (
-    <div className={styles[type]}>
+      <div>
+    <div className={styles[InputType]}>
       {dirty}
-      <input className={styles[type + "_input"]} placeholder={placeholder} onChange={handleChange} />
-      {text && <span className={`${styles[type + "_text" ]} ${dirty&&styles[type+'_dirty']}`}>{text}</span>}
+      <input className={styles[InputType + "_input"]} placeholder={placeholder} onChange={handleChange} type={type} />
+      {text && <span className={`${styles[InputType + "_text" ]} ${dirty&&styles[InputType+'_dirty']}`}>{text}</span>}
       {img && (
         <div className={styles.header_img}>
           <Image src={find} />
         </div>
       )}
     </div>
+        <span className={styles[InputType+`_error${error?'_active':''}`]}>{error}ssssssss</span>
+      </div>
   );
 };
 
