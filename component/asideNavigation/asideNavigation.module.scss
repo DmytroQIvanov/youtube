@@ -1,0 +1,39 @@
+.asideNavigation{
+  display: block;
+  &__linksContainer{
+    margin-left: 32px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 35px;
+  }
+  &__link{
+    display: flex;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #898989;
+    margin-top: 14px;
+    transition-duration: .3s;
+    &_active{
+      color: #FF0000;
+    }
+    &Img{
+      min-width: 25px;
+      margin-right: 10px;
+
+      svg{
+        fill: #0070f3;
+        color: #0070f3;
+      }
+      img{
+        fill: #0070f3;
+        color: #0070f3;
+
+      }
+      fill: #0070f3;
+      color: #0070f3;
+    }
+  }
+}

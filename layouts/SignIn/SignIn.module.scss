@@ -1,0 +1,31 @@
+@import "styles/theme";
+
+.signIn{
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  &_container{
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 40px;
+    border-radius: 10px;
+    height: 400px;
+    border: 1px solid #e1e1e1;
+
+  }
+  &_signInText{
+    text-align: center;
+    font-size: 22px;
+    margin-top: 15px;
+  }
+
+  &_signInText2{
+    font-family: Arial;
+    margin-top: 15px;
+    color: #4b4b4b;
+    text-align: center;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,6 @@
+@import "styles/mixins";
+.container{
+  margin: 10px 30px 10px 0px;
+  display: block;
+  @include videoPreviewContainer
+}

@@ -1,0 +1,16 @@
+.page404{
+  min-height: 100vh;
+  display: flex;
+  margin: auto;
+  position: relative;
+  &_container{
+    width: 50%;
+    display: flex;
+    margin: auto auto;
+    height: 400px;
+  }
+  &_googleImg{
+    cursor: pointer;
+    width: 150px;
+  }
+}

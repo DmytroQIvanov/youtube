@@ -1,0 +1,67 @@
+@mixin burgerLine{
+  width: 22px;
+  height: 3px;
+  border-radius: 5px;
+  background-color: black;
+  display: block;
+}
+.header{
+  padding: 0 2rem;
+  display: flex;
+  height: 44px;
+  //border: 1px solid black;
+  margin: 16px 0px;
+  position: relative;
+  &__logo{
+    padding-top: 4px;
+    margin: auto 40px auto 20px;
+    cursor: pointer;
+    position: relative;
+    //background-color: black;
+    &Language{
+      position: absolute;
+      top:2px;
+      right:-22px;
+      font-size: 12px;
+    }
+  }
+
+  &__burgerContainer{
+    width: 22px;
+    height: 20px;
+    margin: auto 0px;
+    cursor: pointer;
+    //background-color: red;
+    display: flex;
+    //display: block;
+  }
+  &__burger{
+    @include burgerLine;
+    position: relative;
+    margin: auto 0px;
+    &:after{
+      position: absolute;
+      top:7px;
+      content: ' ';
+      @include burgerLine;
+    }
+    &:before{
+      position: absolute;
+      top:-7px;
+      content: ' ';
+      @include burgerLine;
+    }
+  }
+  &__input{
+    margin: auto 0px;
+  }
+  &__signIn{
+    color: #3ea6ff;
+    padding: 8px;
+    text-align: center;
+    margin: auto 0px auto auto;
+    border: 2px solid #3993da;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+}

@@ -14,3 +14,13 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('../public/fonts/Mulish-Regular.ttf');
+}
+
+.google{
+  color: #1a73e8;
+  cursor: pointer;
+}

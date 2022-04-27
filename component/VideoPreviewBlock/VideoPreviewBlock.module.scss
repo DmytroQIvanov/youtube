@@ -1,0 +1,28 @@
+.videoPreviewBlock{
+ width: 100%;
+  display: block;
+ position: relative;
+
+ transition: all .2s ease-in-out;
+ background-color: #ffffff;
+ &:hover{
+  z-index: 10;
+  transform: scale(1.1);
+ }
+ &__image{
+  border-radius: 7px;
+  display: flex;
+  width: 100%;
+  height: 170px;
+  border-radius: 10px;
+  overflow: hidden;
+  img{
+   cursor: pointer;
+   border-radius: 10px;
+   object-fit: cover;
+  border-radius: 10px;
+  }
+
+
+ }
+}

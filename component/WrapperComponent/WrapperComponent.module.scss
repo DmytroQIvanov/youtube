@@ -1,0 +1,22 @@
+@mixin mainContent ($display){
+  .container{
+    display: $display;
+
+
+  }
+
+}
+//.mainContent{
+//  @include mainContent(flex)
+//
+//}
+
+.mainContent_aside{
+
+  display: grid;
+  grid-template-columns: 0.8fr 4fr;
+}
+.mainContent{
+  display: block;
+
+}
