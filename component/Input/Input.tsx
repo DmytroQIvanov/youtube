@@ -24,7 +24,7 @@ const Input: React.FC<inputProps> = ({
   const [inputState,setInputState] =useState('');
   const [dirty,setDirty] =useState(false);
   useEffect(()=>{
-    if(inputState.length>1){
+    if(inputState.length>0){
       setDirty(true)
     }else{
       setDirty(false)
@@ -38,6 +38,7 @@ const Input: React.FC<inputProps> = ({
   }
   return (
     <div className={styles[type]}>
+      {dirty}
       <input className={styles[type + "_input"]} placeholder={placeholder} onChange={handleChange} />
       {text && <span className={`${styles[type + "_text" ]} ${dirty&&styles[type+'_dirty']}`}>{text}</span>}
       {img && (
