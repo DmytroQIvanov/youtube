@@ -13,11 +13,12 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
-    color: #898989;
     margin-top: 14px;
     transition-duration: .3s;
     a{
       transition-duration: .3s;
+      text-decoration: none;
+      color: #898989;
     }
     a:hover{
       color: #ff3e3e;

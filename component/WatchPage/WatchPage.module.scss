@@ -1,0 +1,13 @@
+.watchPage{
+
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  margin: 10px 0px 0px 35px;
+  &_video{
+    video{
+    border-radius: 10px;
+    overflow: hidden;
+    display: block;
+  }
+  }
+}

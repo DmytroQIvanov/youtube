@@ -53,7 +53,7 @@
 }
 .login{
   width: 100%;
-  margin: 20px auto;
+  margin: 6px auto;
   border-radius: 4px;
   position: relative;
   padding: 10px;
@@ -73,6 +73,7 @@
 
     &:focus{
       outline: none;
+
     }
     &:focus ~ .login_text{
 

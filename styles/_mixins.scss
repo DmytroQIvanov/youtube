@@ -21,3 +21,18 @@
   position: relative;
 
 }
+@mixin authorizationContainer ($width,$height:300px){
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  &_container{
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  width: $width;
+  padding: 40px;
+  border-radius: 10px;
+  height: $height;
+  border: 1px solid #e1e1e1;
+  }
+}

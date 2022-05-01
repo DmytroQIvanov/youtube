@@ -64,4 +64,24 @@
     cursor: pointer;
     border-radius: 4px;
   }
+  &__profileContainer {
+    display: flex;
+    margin: auto 0px auto auto;
+    &Img {
+      margin: auto 12px;
+      display: flex;
+      cursor: pointer;
+      img{
+        margin: auto;
+
+      }
+      //height: 100%;
+
+    }
+    &BorderR{
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
 }
