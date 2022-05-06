@@ -1,30 +1,38 @@
-import React, {useRef, useState} from 'react';
-import styles from './VideoPlayer.module.scss'
+import React, { useRef, useState } from "react";
+import styles from "./VideoPlayer.module.scss";
 
-
-const VideoPlayer:React.FC<{url: string }> = ({url}) => {
-
-    const [state,setState]=useState(false)
-    const refd =useRef(null)
-    const onHandlePlay=()=>{
-        console.log(refd)
-        if(state){
-            refd.current.pause()
-        }else {
-            refd.current.play()
-
-        }
-        setState(!state)
+const VideoPlayer: React.FC<{ url: string }> = ({ url }) => {
+  const [state, setState] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const refd = useRef(null);
+  const onHandlePlay = () => {
+    console.log(refd);
+    if (state) {
+      refd.current.pause();
+    } else {
+      refd.current.play();
     }
-    return (
-        <div className={styles.videoPlayer}>
-            <button onClick={onHandlePlay} className={styles.videoPlayer_playBtn}>{!state?'play':'stop'}</button>
-            <video width="80%"  preload="auto"  src={url} ref={refd}>
-                {/*<source type="video/mp4" />*/}
-                {/*Your browser does not support HTML5 video.*/}
-            </video>
-        </div>
-    );
+    setState(!state);
+  };
+  return (
+    <div className={styles.videoPlayer}>
+      <button onClick={onHandlePlay} className={styles.videoPlayer_playBtn}>
+        {!state ? "play" : "stop"}
+      </button>
+      {loading && <>Loading</>}
+      <video
+        width="80%"
+        preload="auto"
+        src={url}
+        ref={refd}
+        onLoadStart={() => setLoading(true)}
+        onLoadedData={() => setLoading(false)}
+      >
+        {/*<source type="video/mp4" />*/}
+        {/*Your browser does not support HTML5 video.*/}
+      </video>
+    </div>
+  );
 };
 
 export default VideoPlayer;

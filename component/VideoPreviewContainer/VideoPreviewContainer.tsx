@@ -13,7 +13,7 @@ const testArray: IVideoPreview[] = [
     createdData: "5 days ago",
   },
   {
-      previewImage:previewImage2,
+    previewImage: previewImage2,
     title: "Test text ",
     views: "45k",
     createdData: "5 days ago",
@@ -25,13 +25,13 @@ const testArray: IVideoPreview[] = [
     createdData: "5 days ago",
   },
   {
-      previewImage: previewImage2,
+    previewImage: previewImage2,
     title: "Test text ",
     views: "45k",
     createdData: "5 days ago",
   },
   {
-      previewImage: previewImage2,
+    previewImage: previewImage2,
     title: "Test text ",
     views: "45k",
     createdData: "5 days ago",
@@ -42,36 +42,36 @@ const testArray: IVideoPreview[] = [
     views: "45k",
     createdData: "5 days ago",
   },
-    {
-        previewImage,
-        title: "Test text ",
-        views: "45k",
-        createdData: "5 days ago",
-    },
-    {
-        previewImage,
-        title: "Test text ",
-        views: "45k",
-        createdData: "5 days ago",
-    },
-    {
-        previewImage,
-        title: "Test text ",
-        views: "45k",
-        createdData: "5 days ago",
-    },
-    {
-        previewImage,
-        title: "Test text ",
-        views: "45k",
-        createdData: "5 days ago",
-    },
-    {
-        previewImage,
-        title: "Test text ",
-        views: "45k",
-        createdData: "5 days ago",
-    },
+  {
+    previewImage,
+    title: "Test text ",
+    views: "45k",
+    createdData: "5 days ago",
+  },
+  {
+    previewImage,
+    title: "Test text ",
+    views: "45k",
+    createdData: "5 days ago",
+  },
+  {
+    previewImage,
+    title: "Test text ",
+    views: "45k",
+    createdData: "5 days ago",
+  },
+  {
+    previewImage,
+    title: "Test text ",
+    views: "45k",
+    createdData: "5 days ago",
+  },
+  {
+    previewImage,
+    title: "Test text ",
+    views: "45k",
+    createdData: "5 days ago",
+  },
   {
     previewImage,
     title: "Test text ",
@@ -80,12 +80,12 @@ const testArray: IVideoPreview[] = [
   },
 ];
 
-const VideoPreviewContainer = () => {
+const VideoPreviewContainer = ({ data }) => {
   return (
     <div className={styles.container}>
-      {testArray.map((elem, index) => (
-        <VideoPreviewBlock data={elem} />
-      ))}
+      {data
+        ? data.map((elem, index) => <VideoPreviewBlock data={elem} />)
+        : testArray.map((elem, index) => <VideoPreviewBlock data={elem} />)}
     </div>
   );
 };
